@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image </title>
+    <style>
+
+
+        li{
+            float: none;
+        }
+        img{
+            width: 250px;
+            height:300px ;
+        }
+    </style>
+</head>
+<body>
+<h1> My Images List</h1>
+<ul>
+    {% for image in images%}
+     <li>
+     <h2>{{ image.title }}</h2>
+         <img src="{{ image.image.url }}" alt="image.title">
+     </li>
+{# <a href="{% url 'update_image' task.id %}">Edit</a>#}
+{#    <a href="{% url 'delete_image' task.id %}">Delete</a>#}
+
+    {% endfor %}
+
+
+</ul>
+<a href="{% url 'upload_image' %}">Upload Image</a>
+{#<a href="{% url 'update' image.id %}">Update</a>#}
+{#<a href="{% url 'delete' image.id%}">Delete</a>#}
+</body>
+</html>
